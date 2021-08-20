@@ -1,5 +1,5 @@
 """
-notifyemail-1.0.2 
+notifyemail-1.0.2    use pip to install
 
 版本 8月 20日 16：55  修改了调用逻辑
 这个文件用来自动发送 输出log + 性能监控log + 追加的文件 到指定邮箱列表中
