@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 setup(name='notifyemail', # 包名
-      version='1.0.1', # 版本号
+      version='1.0.2', # 版本号
       description='python邮件小工具',
 
       long_description=long_description,
