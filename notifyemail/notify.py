@@ -615,6 +615,7 @@ class NotifyFrontend:
         self.mail_user = mail_user
         self.mail_pass = mail_pass
         self.default_reciving_list = default_reciving_list
+        self.max_log_cnt = max_log_cnt
 
         # 一开始是个空的NotifyFrontend，不真正启动
         if self.log_root_path != 'not set' and self.mail_host != 'not set' \
@@ -622,7 +623,7 @@ class NotifyFrontend:
             # 文件保存参数
             call_func_name = 'default'
             self.log_creation_path = os.path.join(self.log_root_path, call_func_name)  # 日志主目录 = 日志根目录 + 程序名
-            self.max_log_under_root_path = max_log_cnt  # 日志根目录下最多日志数，如果超过会自动删除过早的日志文件夹
+            self.max_log_under_root_path = self.max_log_cnt  # 日志根目录下最多日志数，如果超过会自动删除过早的日志文件夹
 
             log_folder_name = time.strftime('%Y_%m_%d-%H_%M_%S', time.localtime(time.time()))  # 当前时间作为子文件夹名
             self.log_folder_path = os.path.join(self.log_creation_path, log_folder_name)
@@ -763,6 +764,12 @@ def Reboost(notify_frontend=notify_frontend, mail_host='not set', mail_user='not
                             mail_user=mail_user, mail_pass=mail_pass,
                             default_reciving_list=default_reciving_list, max_log_cnt=max_log_cnt)
     print('notify_frontend reboosted!')
+    print('log_root_path', notify_frontend.log_root_path)
+    # print('mail_host', notify_frontend.mail_host)
+    print('mail_user', notify_frontend.mail_user)
+    # print('mail_pass', notify_frontend.mail_pass)
+    print('default_reciving_list', notify_frontend.default_reciving_list)
+    # print('max_log_cnt', notify_frontend.max_log_cnt)
 
 
 def add_text(text_input, notify_frontend=notify_frontend):
@@ -813,7 +820,7 @@ def add_file(file_dir, notify_frontend=notify_frontend):
     print(file_dir, " has been added to the mail attachment list as an additional file")
 
 
-def send_log(mail_list=notify_frontend.default_reciving_list, notify_frontend=notify_frontend):
+def send_log(mail_list=None, notify_frontend=notify_frontend):
     """
     设置接收邮箱，可以在代码中的任何位置设置，程序执行完成后邮件会发往最后指定的接收方
     :param mail_list: 日志发送对象，可以是str或者list类型
@@ -833,6 +840,9 @@ def send_log(mail_list=notify_frontend.default_reciving_list, notify_frontend=no
                         'address, NOTICE by defult it will be send back to your mail_user account if you dont set this' +
                         '\nyou can set max_log_cnt = int, this is the amount of logs the notify will not auto delete ' +
                         'this is aming for saving the zoom of your local driver')
+
+    if mail_list == None:
+        mail_list = notify_frontend.default_reciving_list
     if bool(mail_list):
         call_func_name = sys._getframe(1).f_code.co_filename.split('/')[-1]  # 获取程序名作为主目录
         call_func_name = re.findall(r'[^/\\]+$', call_func_name)[0].split('.py')[0]
