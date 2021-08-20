@@ -21,12 +21,13 @@ After these simple setting you can now follow the tips to use our module in your
 
 import notifyemail
 
-/# Please reset Notify frontend by this Right After you first import Notify 先使用Reboost设置发件信息等，参考如下:
+# Please reset Notify frontend by this Right After you first import Notify 
+先使用Reboost设置发件信息等，参考如下:
 
 notifyemail.Reboost(mail_host='smtp.163.com', mail_user='xxxx@163.com',mail_pass='xxxx', default_receivers='xxx@163.com', log_root_path='log', max_log_cnt=5)
                
                
-In notifyemail.Reboost() your need to set:
+* In notifyemail.Reboost() your need to set:
 
 log_root_path= str, the place you wish to save log files
 
