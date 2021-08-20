@@ -64,10 +64,12 @@ notifyemail.add_file(file_name）
 
 # Step 5 In the process if you wish to send email to other address, use this 
 如果需要更改需要发送邮件的邮箱可以用这个，输入为空则为default list。
+
 notifyemail.send_log(xxx)   # str (an email address) or list / tuple containing multiple email address (str) is allowed
 
 # we recomend you to use this at the end of your code, this can update log name information in email
 notifyemail.send_log()  # empty
+
 /# 在自己代码中的任意位置调用就行。注意：如果不调用，则邮件中的程序名为default，且自动发送给默认邮箱
 
 
