@@ -1,8 +1,0 @@
-LICENSE.txt
-README.md
-setup.py
-notifyemail/__init__.py
-notifyemail.egg-info/PKG-INFO
-notifyemail.egg-info/SOURCES.txt
-notifyemail.egg-info/dependency_links.txt
-notifyemail.egg-info/top_level.txt
