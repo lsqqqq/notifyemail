@@ -6,14 +6,14 @@
 
 -------------------------------------------------------------------------------
 需要监控的程序可在启动时用如下代码调用本功能，注意，首先需要reboost：
-import notify
+import notifyemail
 
 
 /# Please reset Notify frontend by this 先使用Reboost设置发件信息等，参考如下:
 
-notify.Reboost(mail_host='smtp.163.com', mail_user='xxxx@163.com',
-               mail_pass='xxxx', default_receivers='xxx@163.com', log_root_path='log',
-               max_log_cnt=5)
+notifyemail.Reboost(mail_host='smtp.163.com', mail_user='xxxx@163.com',
+                    mail_pass='xxxx', default_receivers='xxx@163.com', log_root_path='log',
+                    max_log_cnt=5)
                
                
 Right After you first import Notify your need to set:
@@ -39,15 +39,15 @@ this is aming for saving the zoom of your local driver
 
 
 /# 在邮件里新增一段文本，可多次用
-notify.add_text("whatever u want to say")
+notifyemail.add_text("whatever u want to say")
 
 
 /# 追加邮件附件，可以是文件/文件夹的文件路径（会自动zip），只需要在任意位置调用这个函数即可，可多次用,添加多个附件
-notify.add_file(file_name）
+notifyemail.add_file(file_name）
 ...
 
 
-notify.send_log()
+notifyemail.send_log()
 /# 选择需要发送邮件的邮箱，空则为default list
 
 /# 在自己代码中的任意位置调用就行。注意：如果不调用，则邮件中的程序名为default，且自动发送给默认邮箱
@@ -58,7 +58,7 @@ notify.send_log()
 公邮：xxx@163.com
 密码：xxx
 如果想只发给自己，就把自己邮箱写进去：在自己代码中任意位置使用，以最后一次调用为准
-notify.send_log(“1111@111.com”)
+notifyemail.send_log(“1111@111.com”)
 如果要发给多人，请传入一个包含多个str的元组/列表。
 不写发给谁的话，默认会发给一个默认列表中的所有人，公邮在默认列表中。
 发件邮箱：xxx@163.com
