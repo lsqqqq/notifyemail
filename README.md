@@ -15,7 +15,8 @@ Then you need to set up your OWN EMAIL with SMTP, check this out in SMTP ReadME
 
 After these simple setting you can now follow the tips to use our module in your code.
 
-# Step 1 需要监控的程序可在启动时用如下代码调用本功能，注意，首先需要reboost：
+# Step 1 import and Reboost
+需要监控的程序可在启动时用如下代码调用本功能，注意，首先需要reboost：
 
 import notifyemail
 
@@ -42,11 +43,13 @@ you can set max_log_cnt = int, this is the amount of logs the notify will not au
 
 this is aming for saving the zoom of your local driver
 
-# Step 2 your code blocks... 程序代码
+# Step 2 your code blocks... 
+程序代码
 ...
 
 
-# Step 3 Add text in the email use this, you can use many times 在邮件里新增一段文本，可多次用
+# Step 3 Add text in the email use this, you can use many times 
+在邮件里新增一段文本，可多次用
 
 notifyemail.add_text("whatever u want to say")
 
@@ -58,7 +61,8 @@ notifyemail.add_file(file_name）
 ...
 
 
-# Step 5 In the process if you wish to send email to other address, use this 如果需要更改需要发送邮件的邮箱可以用这个，输入为空则为default list。
+# Step 5 In the process if you wish to send email to other address, use this 
+如果需要更改需要发送邮件的邮箱可以用这个，输入为空则为default list。
 notifyemail.send_log(xxx)   # str (an email address) or list / tuple containing multiple email address (str) is allowed
 
 # we recomend you to use this at the end of your code, this can update log name information in email
