@@ -186,6 +186,6 @@ TODO 增加注释 增加英文注释
 
 雷言理  @Desperadodo
 
-吴雨卓 @Vision0220
+吴雨卓 @[Vision0220](https://github.com/Vision0220)
 
 
