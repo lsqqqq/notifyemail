@@ -6,7 +6,6 @@
 
 Hope it can do some help for your project :)
 
----
 
 ## Requirements
 
@@ -16,7 +15,6 @@ About how to setup a public email:
 * [smtp_usage.md](./smtp_usage.md)
 * [smtp_usage_chinese.md](./smtp_usage_chinese.md)
 
----
 
 ## How to install
 
@@ -26,7 +24,6 @@ Use pip to install our module:
 pip install notifyemail
 ```
 
----
 
 ## How to use
 
@@ -60,7 +57,6 @@ A_file_path = './examples'
 notify.add_file(A_file_path)
 ```
 
----
 
 ## Example
 
@@ -154,7 +150,6 @@ Maximum CPU Usage:       0.15  | Maximum Memory Usage:   6.0
 
 The `result_folder.zip` contains the folder `./result_folder` and its content as specified using `notify.add_file()`.
 
----
 
 ## Change log
 
@@ -164,8 +159,6 @@ The `result_folder.zip` contains the folder `./result_folder` and its content as
 * Re-arranged the notifyemail project structure.
 * Translate all comments into English.
 
-
----
 
 ## Contribution list
 
