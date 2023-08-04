@@ -6,13 +6,17 @@
 
 Hope it can do some help for your project :)
 
+---
 
 ## Requirements
 
 You need a public email. 
 
-About how to setup a public email, you may refer to [smtp_usage.md](./smtp_usage.md) or [smtp_usage_chinese.md](./smtp_usage_chinese.md)
+About how to setup a public email:
+* [smtp_usage.md](./smtp_usage.md)
+* [smtp_usage_chinese.md](./smtp_usage_chinese.md)
 
+---
 
 ## How to install
 
@@ -22,9 +26,11 @@ Use pip to install our module:
 pip install notifyemail
 ```
 
+---
+
 ## How to use
 
-First, import notifyemail model.
+First, import notifyemail module.
 
 ```python
 import notifyemail as notify
@@ -41,8 +47,7 @@ notify.setup(mail_host='smtp.163.com',
 
 This line will start a background task that keeps monitoring your program running status and server status. Upon your program ends or encounters a failure, the background process will try to send you an email with program outputs and other essential information.
 
-After the above setting, all your terminal outputs like `print` or error information will be logged. You may also use the following two method to add more content as you wish.
-
+After the above setting, all your terminal outputs like `print` or error information will be logged. You may also use the following two methods to add more text or files into the email.
 
 ```bash
 # You may use notify.add_text() to add words into the body of the email.
@@ -55,12 +60,14 @@ A_file_path = './examples'
 notify.add_file(A_file_path)
 ```
 
+---
+
 ## Example
 
 An example is shown here:
 
 ```python
-# 1. Import the package. Nothing will happen here.
+# 1. Import the package.
 import notifyemail as notify
 
 # 2. Please reset Notify frontend before running any task, otherwise 
@@ -147,6 +154,18 @@ Maximum CPU Usage:       0.15  | Maximum Memory Usage:   6.0
 
 The `result_folder.zip` contains the folder `./result_folder` and its content as specified using `notify.add_file()`.
 
+---
+
+## Change log
+
+2023-08-04:
+* Integrate `notify.Reboost` and `notify.send_log` into `notify.setup` function. You can call `notify.setup` at the beginning of your program instead of calling `notify.Reboost` and `notify.send_log` separately. The previous method is still supported.
+* Add examples under `./examples`.
+* Re-arranged the notifyemail project structure.
+* Translate all comments into English.
+
+
+---
 
 ## Contribution list
 

@@ -33,14 +33,4 @@ try:
     print("Mail sent successfully")
 except smtplib.SMTPException:
     print("Error: Failed to send the email")
-
 ```
-
-Common SMTP Server Addresses for Popular Email Providers
-Sina Mail: smtp.sina.com
-Sina VIP Mail: smtp.vip.sina.com
-Sohu Mail: http://smtp.sohu.com
-126 Mail: smtp.126.com
-139 Mail: smtp.139.com
-163 NetEase Mail: http://smtp.163.com
-Note: The authorization code will be displayed only once! Please make sure to copy it correctly!

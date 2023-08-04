@@ -236,12 +236,10 @@ def _send_log(mail_list=None, notify_frontend=None):
         # call_func_name = sys._getframe(1).f_code.co_filename.split('/')[-1]  # Get program main directory
         # call_func_name = re.findall(r'[^/\\]+$', call_func_name)[0].split('.py')[0]
 
-        # Fetch the first .py code that is calling this function. (TODO: only tested on Linux!)
+        # Fetch the first .py code that is calling this function. (TODO: need to test on Windows)
         back_frame = sys._getframe()
         while back_frame.f_back:
             back_frame = back_frame.f_back
         call_func_name = os.path.basename(back_frame.f_code.co_filename).split('.')[0]
-
-        print(call_func_name)
 
         notify_frontend.send_log(mail_list, call_func_name)
