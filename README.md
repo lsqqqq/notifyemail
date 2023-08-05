@@ -1,6 +1,6 @@
 # Notify-Email
 
-![](.assets/notifyemail_structure.png)
+![](./assets/notifyemail_structure.png)
 
 **Notifyemail** is a package that sends notifications via email when your code finishes running on a remote server. With the assistance of Notifyemail, you can receive the running results of your program at the first time, even if your server is within a Local-Area-Network (LAN). It also works well with other environments like Google Colab and notifies you of the results when program finished.
 
@@ -99,7 +99,7 @@ something_went_wrong_here
 
 After running the above example, you may receive an email as shown below:
 
-![](.assets/mailbox.png)
+![](./assets/mailbox.png)
 
 
 The attachment file contains the system output:
